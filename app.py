@@ -1,6 +1,14 @@
 from flask import Flask, render_template, request
-
+# import  sqlalchemy
+from flask_sqlalchemy import SQLAlchemy
 app = Flask(__name__)
+
+# Setup app to use a sqlalchemy database
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///sampledb.db'
+db = SQLAlchemy(app)
+
+
+# Setup a simple tble for database
 
 
 # Make a homepage
@@ -18,6 +26,9 @@ def formDemo(name = None):
     if request.method == 'POST':
         name=request.form['name']
     return render_template('form.html', name=name)
+
+# Add in a page to view visitors
+
 
 
 # Add the option to run this file directly
