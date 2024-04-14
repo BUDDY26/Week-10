@@ -26,7 +26,7 @@ with app.app_context():
 # Make a homepage
 @app.route('/')
 def homepage():
-    return render_template('base.html' , name = " Ruben James Aleman ")
+    return render_template('base.html' , name = " Ruben James ")
 
 @app.route('/user/<name>')
 def hello(name):
